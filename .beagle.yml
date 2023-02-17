@@ -1,6 +1,10 @@
 kind: pipeline
 name: docker
 
+trigger:
+  branch:
+    - main
+
 volumes:
   - name: docker
     host:
