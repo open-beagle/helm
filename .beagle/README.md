@@ -5,7 +5,7 @@
 ```bash
 git remote add upstream git@github.com:helm/helm.git
 git fetch upstream
-git merge v3.11.1
+git merge v3.12.1
 ```
 
 ## build
@@ -18,7 +18,7 @@ docker run -it --rm \
 -e CI_WORKSPACE=/go/src/helm.sh/helm/v3 \
 -e PLUGIN_BINARY=helm \
 -e PLUGIN_MAIN=cmd/helm \
-registry.cn-qingdao.aliyuncs.com/wod/devops-go-arch:1.19-alpine
+registry.cn-qingdao.aliyuncs.com/wod/devops-go-arch:1.20-alpine
 
 # tgz
 docker run -it --rm \
@@ -30,11 +30,11 @@ ash -c ' \
 cd dist && \
 mkdir -p linux-amd64 linux-arm64 linux-ppc64le linux-mips64le && \
 mv helm-linux-amd64 linux-amd64/helm && \
-tar czvf helm-v3.11.1-linux-amd64.tar.gz linux-amd64 && \
+tar czvf helm-v3.12.1-linux-amd64.tar.gz linux-amd64 && \
 mv helm-linux-arm64 linux-arm64/helm && \
-tar czvf helm-v3.11.1-linux-arm64.tar.gz linux-arm64 && \
+tar czvf helm-v3.12.1-linux-arm64.tar.gz linux-arm64 && \
 mv helm-linux-ppc64le linux-ppc64le/helm && \
-tar czvf helm-v3.11.1-linux-ppc64le.tar.gz linux-ppc64le
+tar czvf helm-v3.12.1-linux-ppc64le.tar.gz linux-ppc64le
 '
 
 # devops-docker
@@ -45,7 +45,7 @@ docker run -it --rm \
 -e PLUGIN_BASE=registry.cn-qingdao.aliyuncs.com/wod/alpine:3 \
 -e PLUGIN_DOCKERFILE=.beagle/dockerfile \
 -e PLUGIN_REPO=wod/helm \
--e PLUGIN_VERSION='v3.11.1' \
+-e PLUGIN_VERSION='v3.12.1' \
 -e PLUGIN_ARGS='TARGETOS=linux,TARGETARCH=amd64' \
 -e PLUGIN_REGISTRY=registry.cn-qingdao.aliyuncs.com \
 -e REGISTRY_USER=<REGISTRY_USER> \
