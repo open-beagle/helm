@@ -10,6 +10,4 @@ LABEL maintainer=${AUTHOR} version=${VERSION}
 ARG TARGETOS
 ARG TARGETARCH
 
-RUN apk add curl
-
 COPY ./dist/helm-$TARGETOS-$TARGETARCH /usr/local/bin/helm

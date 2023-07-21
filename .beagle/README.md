@@ -58,7 +58,7 @@ docker run -it --rm \
 -w /go/src/helm.sh/helm/v3 \
 -v $PWD/:/go/src/helm.sh/helm/v3 \
 -e CI_WORKSPACE=/go/src/helm.sh/helm/v3 \
-registry.cn-qingdao.aliyuncs.com/wod/alpine:3.14 \
+registry.cn-qingdao.aliyuncs.com/wod/alpine:3 \
 ash -c '
 ./dist/helm-linux-amd64 version
 '
